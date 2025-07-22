@@ -22,22 +22,22 @@
                 {
                     "name":"React",
                     "icon":"react",
-                    "src":"src/projectImages/react.png"
+                    "src":"public/projectImages/react.png"
                 },
                 {
                     "name":"Node.Js",
                     "icon":"nodejs",
-                    "src":"src/projectImages/node.png"
+                    "src":"public/projectImages/node.png"
                 },
                 {
                     "name":"Mongodb",
                     "icon":"mongodb",
-                    "src":"src/projectImages/mongo.png"
+                    "src":"public/projectImages/mongo.png"
                 },
                 {
                     "name":"Leetcode",
                     "icon":"leetcode",
-                    "src":"src/projectImages/leetcode.png"
+                    "src":"public/projectImages/leetcode.png"
                 }
             ]
         }   
