@@ -1,0 +1,45 @@
+[
+    {
+        "name":"MAMUNUR RASHID SOHAG",
+        "work_as":"Computer Science Student",
+        "socialLink":[
+            {
+                "name":"github",
+                "link":"https://github.com/sohagannamA"
+            },
+            {
+                "name":"linkedin",
+                "link":"https://www.linkedin.com/in/mamunur-rashid-sohag-659240256/"
+            }
+        ],
+        "email":"sohagannam5a@gmail.com",
+        "selfinfo1":"I'm a self-taught, disciplined developer with a passion for",
+        "selfinfo2":"I love turning ideas into code and continuously learning to improve",
+
+        "skillSet":{
+            "selfinfoSkill":["JavaScript, React, and problem-solving"],
+            "homeSkill":[
+                {
+                    "name":"React",
+                    "icon":"react",
+                    "src":"src/projectImages/react.png"
+                },
+                {
+                    "name":"Node.Js",
+                    "icon":"nodejs",
+                    "src":"src/projectImages/node.png"
+                },
+                {
+                    "name":"Mongodb",
+                    "icon":"mongodb",
+                    "src":"src/projectImages/mongo.png"
+                },
+                {
+                    "name":"Leetcode",
+                    "icon":"leetcode",
+                    "src":"src/projectImages/leetcode.png"
+                }
+            ]
+        }   
+    }
+]

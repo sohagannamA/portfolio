@@ -1,0 +1,138 @@
+
+.selectNav{
+    transition: 0.3s;
+    /* box-shadow: 0 7px 20px 0 #01090f; */
+}
+.forActiveNav .active{
+    border-left-color: rgb(157, 103, 232);
+    /* color: white; */
+}
+
+
+.forActive_Nav .active{
+    color: rgb(98, 133, 133);
+}
+
+nav .active_set.active {
+    background-color: rgb(157, 103, 232);
+    color: white;
+
+}
+
+.iconHover:hover .link{
+    color:#126BC5;
+}
+.iconHover:hover .github{
+    color: #6170C2;
+}
+.p_font{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    text-align: justify;
+    line-height:2;
+}
+.font_family{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+}
+
+
+
+
+
+.bigdcoreSkill{
+    display: grid;
+}
+
+@media(max-width:949px){
+    .ressmallText{
+        font-size: 14px;
+    }
+    .resinfoml{
+        margin-left: 25px;
+    }
+}
+
+@media(max-width:848px){
+    .forresNav{
+        flex-direction: column;
+    }
+    .rescoreSkill{
+        display: grid;
+    }
+    .bigdcoreSkill{
+        display: none;
+    }
+    .resinfoitems{
+        flex-direction: column;
+    }
+    .res_profileLink{
+        justify-content: center;
+    }
+    .remove_max_w{
+        max-width: inherit;
+    }
+    .introRes{
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+@media(max-width:768px){
+    .remove_res_w{
+        width: 100%;
+    }
+    .ressmallText{
+        font-size: inherit;
+    }
+    .resinfoml{
+        margin-left: inherit;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+/* setting_design */
+
+@media(max-width:840px){
+    .setting_res{
+        width: 100%;
+    }
+}
+
+
+/* Project design */
+@media(max-width:994px){
+    .rescard{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+body::-webkit-scrollbar{
+    width: 7px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: rgb(179, 175, 175);
+    border-radius: 30px;
+}
+
+@media(max-width:493px){
+    .rescard{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .responsefull{
+        height: auto;
+    }
+    .resfont_side_project_tect{
+        font-size: 13px;
+    }
+}
+
+
+
+/* DashBoard design */
+.logo_font{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.setZindex{
+    z-index: inherit;
+}
