@@ -11,7 +11,7 @@
             "id":"crtf_1",
             "title":"For excellent result in 7th semester",
             "subtitle":"It was my good day and best achievement in my college life. I worked hard and finally i can get it",
-            "src":"src/projectImages/excelentResult 7th semester.jpg"
+            "src":"/projectImages/excelentResult 7th semester.jpg"
         }
      ],
      "crtf_2":[
@@ -19,7 +19,7 @@
             "id":"crtf_2",
             "title":"For effective presentation ",
             "subtitle":"From this course I have learned how to give better presentations and talk about any topic. I think it will help me in my daily and academic life. Thanks HP for providing an amazing course.",
-            "src":"src/projectImages/presentation.jpg"
+            "src":"/projectImages/presentation.jpg"
         }
      ],
      "crtf_3":[
@@ -27,7 +27,7 @@
             "id":"crtf_3",
             "title":"industrial Attachment Training",
             "subtitle":"For this course I learned about industry related tools and also about web design and development. This course has greatly strengthened my basic understanding of web design and development and I am learning about it every day.",
-            "src":"src/projectImages/Industrial_Attachment.jpg"
+            "src":"/projectImages/Industrial_Attachment.jpg"
         }
      ]
    }
