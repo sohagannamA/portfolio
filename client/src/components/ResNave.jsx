@@ -100,7 +100,7 @@ export default function ResNave() {
               <SkillSlide />
             </div>
           </div>
-          <div className="forActive_Nav mt-20 grid grid-cols-3 gap-3">
+          <div className="forActive_Nav mt-15 grid grid-cols-3 gap-3">
             <NavLink
               onClick={() => dispatch(toggleham(!isNavshow))}
               to="/"
