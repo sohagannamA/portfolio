@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const NavSlice = createSlice({
   name: "nav",
   initialState: {
@@ -8,6 +7,7 @@ const NavSlice = createSlice({
       localStorage.getItem("side") === null
         ? "top"
         : localStorage.getItem("side"),
+    resnav: false,
   },
 
   reducers: {
@@ -27,8 +27,12 @@ const NavSlice = createSlice({
       state.side = "top";
       localStorage.setItem("side", state.side);
     },
+    toggleham: (state, action) => {
+      state.resnav = action.payload;
+    },
   },
 });
 
-export const { setTop, setLeft, setRight, setBottom } = NavSlice.actions;
+export const { setTop, setLeft, toggleham, setRight, setBottom } =
+  NavSlice.actions;
 export default NavSlice.reducer;

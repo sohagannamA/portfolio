@@ -17,6 +17,7 @@ import HomeData from "../projectdata/home.json";
 
 export default function Home() {
   const selectedItems = useSelector((state) => state.nav.side);
+  const isNavshow = useSelector((state) => state.nav.resnav);
   return (
     <div
       className={`py-[5%] ${
@@ -76,7 +77,7 @@ export default function Home() {
             </div>
             <div className="grid-cols-2 gap-2 hidden rescoreSkill">
               {HomeData[0].skillSet.homeSkill.map((skill) => (
-                <Tilt>
+                <Tilt className={`${isNavshow ? "hidden" : "block"}`}>
                   <div className="bg-gray-200 hover:bg-gray-300 dark:bg-[rgb(26,35,39)] dark:hover:bg-[rgb(38,50,56)] flex items-center justify-center py-2 rounded cursor-pointer">
                     {(skill.icon === "react" && (
                       <FaReact className="text-[#56BCD7]" />

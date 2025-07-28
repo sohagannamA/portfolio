@@ -2,14 +2,29 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { RiSettings2Line } from "react-icons/ri";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleham } from "../features/nav/NavSlice";
+import { GoHome } from "react-icons/go";
+import { IoBagOutline } from "react-icons/io5";
+import { TbDeviceDesktopCode } from "react-icons/tb";
+import { PiCertificateThin } from "react-icons/pi";
+import { TfiWrite } from "react-icons/tfi";
+import { MdOutlineMailOutline } from "react-icons/md";
+import HomeData from "../projectdata/home.json";
+
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import SkillSlide from "./SkillSlide";
+import { IoClose } from "react-icons/io5";
 
 export default function ResNave() {
-  const [isNavshow, setShownav] = useState(false);
+  const isNavshow = useSelector((state) => state.nav.resnav);
+  const dispatch = useDispatch();
 
   const [scrollHeight, setScrollHeight] = useState(false);
   useEffect(() => {
     document.addEventListener("scroll", function () {
-      setShownav(false);
+      dispatch(toggleham(false));
       scrollY > 20 ? setScrollHeight(true) : setScrollHeight(false);
     });
   }, []);
@@ -33,67 +48,111 @@ export default function ResNave() {
           </div>
         </NavLink>
         <div
-          onClick={() => setShownav(!isNavshow)}
+          onClick={() => dispatch(toggleham(!isNavshow))}
           className="active_set h-9 w-9 bg-gray-200 hover:bg-gray-300   dark:bg-[rgb(21,31,39)] text-[20px] rounded-full cursor-pointer flex items-center justify-center dark:text-gray-200 dark:hover:bg-[rgb(38,50,56)]"
         >
           <AiOutlineMenu />
         </div>
       </div>
       <div
-        className={`selectNav shadow-xl md:shadow-none shadow-[#000000] fixed w-full top-[10%]  left-0 bg-gray-200 dark:bg-gray-900  py-6 rounded ${
+        className={` fixed w-full h-[100vh] top-[0%] left-0 py-6 px-3 rounded bg-[#ffffff] dark:bg-[#0b1012] ${
           !isNavshow ? "opacity-0 hidden" : "opacity-100 block"
         }`}
       >
-        <div className="forActive_Nav grid grid-cols-3 space-y-7">
-          <NavLink
-            onClick={() => setShownav(!isNavshow)}
-            to="/"
-            className="border-b text-center border-b-transparent  font_family dark:text-gray-300 text-[16px] dark:hover:text-gray-50"
-          >
-            Home
-          </NavLink>
-          <NavLink
-            onClick={() => setShownav(!isNavshow)}
-            to="/projects"
-            className="border-b text-center border-b-transparent  font_family dark:text-gray-300 text-[16px] dark:hover:text-gray-50"
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            onClick={() => setShownav(!isNavshow)}
-            to="/skill"
-            className="border-b text-center border-b-transparent font_family dark:text-gray-300 text-[16px] dark:hover:text-gray-50"
-          >
-            Skill
-          </NavLink>
-          <NavLink
-            onClick={() => setShownav(!isNavshow)}
-            to="/certificate"
-            className="border-b text-center border-b-transparent  font_family dark:text-gray-300 text-[16px] dark:hover:text-gray-50"
-          >
-            Certificate
-          </NavLink>
-          <NavLink
-            onClick={() => setShownav(!isNavshow)}
-            to="/blogs"
-            className="border-b text-center border-b-transparent  font_family dark:text-gray-300 text-[16px] dark:hover:text-gray-50"
-          >
-            Blogs
-          </NavLink>
-          <NavLink
-            onClick={() => setShownav(!isNavshow)}
-            to="/contact"
-            className="border-b text-center border-b-transparent  font_family dark:text-gray-300 text-[16px] dark:hover:text-gray-50"
-          >
-            Contact
-          </NavLink>
-          <NavLink
-            onClick={() => setShownav(!isNavshow)}
-            to="/setting"
-            className="border-b text-center border-b-transparent  font_family dark:text-gray-300 text-[16px] dark:hover:text-gray-50"
-          >
-            Setting
-          </NavLink>
+        <div className="fixed top-0 left-0 w-full">
+          <div onClick={()=>dispatch(toggleham(!isNavshow))} className="h-[35px] fixed z-50 top-0 m-3 rounded-full right-0 w-[35px] hover:bg-[#161616] cursor-pointer flex items-center justify-center">
+            <IoClose className="text-[22px] text-gray-300" />
+          </div>
+          <div className="h-42 relative  w-full bg-[linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.90)),url('https://cdn.pixabay.com/photo/2021/12/10/13/30/working-6860520_640.jpg')] bg-cover bg-center"></div>
+          <div className="h-[100px] absolute_position w-[100px] rounded-full bg-gray-300 dark:bg-[rgb(16,23,26)]">
+            <img
+              className="h-[100%] object-top p-1 w-[100%] rounded-full"
+              src="https://cdn.pixabay.com/photo/2019/10/22/13/43/man-4568761_640.jpg"
+            ></img>
+          </div>
+        </div>
+
+        <div className="mt-50">
+          <div className="my-10 text-center">
+            <div className="dark:text-gray-300 text-gray-950">
+              MAMUNUR RASHID SOHAG
+            </div>
+            <p className="text-gray-800 dark:text-gray-400 ressmallText">
+              Computer Science Student
+            </p>
+
+            <div className="res_profileLink flex items-center mt-2 space-x-3">
+              {HomeData[0].socialLink.map((link) => (
+                <NavLink
+                  to={link.link}
+                  className="iconHover h-[30px] bg-gray-200 hover:bg-gray-300 dark:hover:bg-[rgb(38,50,56)]  w-[30px]  dark:bg-[rgb(26,35,39)] flex items-center justify-center rounded"
+                >
+                  {(link.name === "github" && (
+                    <FaGithub className="link text-[15px] dark:text-gray-400" />
+                  )) ||
+                    (link.name === "linkedin" && (
+                      <FaLinkedin className="link text-[15px] dark:text-gray-400" />
+                    ))}
+                </NavLink>
+              ))}
+            </div>
+            <div className="skill_slide">
+              <SkillSlide />
+            </div>
+          </div>
+          <div className="forActive_Nav mt-20 grid grid-cols-3 gap-3">
+            <NavLink
+              onClick={() => dispatch(toggleham(!isNavshow))}
+              to="/"
+              className="flex items-center flex-col p-2 rounded text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-200"
+            >
+              <GoHome className="text-center text-[20px]" />
+              <p className="text-[15px] mt-2">Home</p>
+            </NavLink>
+            <NavLink
+              onClick={() => dispatch(toggleham(!isNavshow))}
+              to="/projects"
+              className="flex items-center flex-col p-2 rounded text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-200"
+            >
+              <IoBagOutline className="text-center text-[20px]" />
+              <p className="text-[15px] mt-2">Projects</p>
+            </NavLink>
+            <NavLink
+              onClick={() => dispatch(toggleham(!isNavshow))}
+              to="/skill"
+              className="flex items-center flex-col p-2 rounded text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-200"
+            >
+              <TbDeviceDesktopCode className="text-center text-[20px]" />
+              <p className="text-[15px] mt-2">Skills</p>
+            </NavLink>
+
+            <NavLink
+              onClick={() => dispatch(toggleham(!isNavshow))}
+              to="/certificate"
+              className="flex items-center flex-col p-2 rounded text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-200"
+            >
+              <PiCertificateThin className="text-center text-[20px]" />
+              <p className="text-[15px] mt-2">Certificate</p>
+            </NavLink>
+
+            <NavLink
+              onClick={() => dispatch(toggleham(!isNavshow))}
+              to="/blogs"
+              className="flex items-center flex-col p-2 rounded text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-200"
+            >
+              <TfiWrite className="text-center text-[20px]" />
+              <p className="text-[15px] mt-2">Blogs</p>
+            </NavLink>
+
+            <NavLink
+              onClick={() => dispatch(toggleham(!isNavshow))}
+              to="/contact"
+              className="flex items-center flex-col p-2 rounded text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-200"
+            >
+              <MdOutlineMailOutline className="text-center text-[20px]" />
+              <p className="text-[15px] mt-2">Contact</p>
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>
