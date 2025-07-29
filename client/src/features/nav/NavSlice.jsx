@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useEffect } from "react";
+
+
 
 const NavSlice = createSlice({
   name: "nav",

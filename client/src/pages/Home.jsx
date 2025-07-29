@@ -18,6 +18,7 @@ import HomeData from "../projectdata/home.json";
 export default function Home() {
   const selectedItems = useSelector((state) => state.nav.side);
   const isNavshow = useSelector((state) => state.nav.resnav);
+  
   return (
     <div
       className={`py-[5%] ${
@@ -105,16 +106,16 @@ export default function Home() {
               ))}
               {HomeData[0].selfinfo2}.
             </p>
-            <div className="flex items-center gap-2  justify-between  mt-4 mb-4">
-              <div className="flex items-center justify-center w-full px-[10px] py-[5px] bg-gray-200 hover:bg-gray-300   dark:bg-[rgb(26,35,39)] dark:hover:bg-[rgb(38,50,56)] dark:text-gray-200 rounded cursor-pointer">
+            <div className="flex items-center gap-2 justify-between md:justify-start  mt-4 mb-4">
+              <div className="flex items-center justify-center w-full md:w-auto  px-[10px] py-[5px] bg-gray-200 hover:bg-gray-300   dark:bg-[rgb(26,35,39)] dark:hover:bg-[rgb(38,50,56)] dark:text-gray-200 rounded cursor-pointer">
                 Resume
                 <IoDownloadOutline className="ml-3" />
               </div>
-              <div className="flex md:hidden items-center justify-center w-full px-[10px] py-[5px] bg-gray-200 hover:bg-gray-300   dark:bg-[rgb(26,35,39)] dark:hover:bg-[rgb(38,50,56)] dark:text-gray-200 rounded cursor-pointer">
+              <div className="flex md:hidden items-center justify-center w-full md:w-auto  px-[10px] py-[5px] bg-gray-200 hover:bg-gray-300   dark:bg-[rgb(26,35,39)] dark:hover:bg-[rgb(38,50,56)] dark:text-gray-200 rounded cursor-pointer">
                 Contact
                 <IoSend className="ml-3" />
               </div>
-              <div className="hidden md:flex items-center justify-center w-full px-[10px] py-[5px] bg-gray-200 hover:bg-gray-300   dark:bg-[rgb(26,35,39)] dark:hover:bg-[rgb(38,50,56)] dark:text-gray-200 rounded cursor-pointer">
+              <div className="hidden md:flex items-center justify-center w-full md:w-auto  px-[10px] py-[5px] bg-gray-200 hover:bg-gray-300   dark:bg-[rgb(26,35,39)] dark:hover:bg-[rgb(38,50,56)] dark:text-gray-200 rounded cursor-pointer">
                 {HomeData[0].email}
               </div>
             </div>

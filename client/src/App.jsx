@@ -1,17 +1,19 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Index from "./routes/Index";
 import { useLocation } from "react-router-dom";
+import { toggleham } from "./features/nav/NavSlice";
 
 export default function App() {
   const root = window.document.documentElement;
   const theme = useSelector((state) => state.theme.theme);
-  const selectedItems = useSelector((state) => state.nav.side);
-  console.log(selectedItems);
+  const setHam = useSelector((state) => state.nav.resnav);
+
+  console.log(setHam);
+
+  const dispatch = useDispatch();
 
   const location = useLocation();
-  
-
   useEffect(() => {
     if (localStorage.getItem("side") === "") {
       localStorage.setItem("side", "top");
@@ -28,6 +30,17 @@ export default function App() {
     if (location.pathname.startsWith("/admin")) {
       root.classList.add("dark");
     }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        dispatch(toggleham(false));
+      }
+    });
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
   }, []);
 
   return (

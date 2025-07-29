@@ -9,6 +9,7 @@ import Projects from "../pages/Projects";
 import Setting from "../pages/Setting";
 
 import PublicLayOut from "../layouts/PublicLayOut";
+import ProjectDetails from "../pages/ProjectDetails";
 
 export default function Index() {
   return (
@@ -16,6 +17,7 @@ export default function Index() {
       <Route element={<PublicLayOut />}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/projectdetails" element={<ProjectDetails />} />
         <Route path="/skill" element={<Skill />} />
         <Route path="/certificate" element={<Certificate />} />
         <Route path="/contact" element={<Contact />} />

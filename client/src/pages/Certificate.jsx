@@ -8,6 +8,9 @@ import CertificateData from "../projectdata/Certificates.json";
 
 export default function Certificate() {
   const selectedItems = useSelector((state) => state.nav.side);
+  const isHam = useSelector((state) => state.nav.resnav);
+
+
   const [activeCertificate, setActiveSrc] = useState({});
 
 
@@ -37,7 +40,6 @@ export default function Certificate() {
     if (certificateData.flag===true) {
       setActiveSrc(certificateData);
     }
-    // setActiveSrc(certificateData.src)
   };
 
   return (
@@ -79,7 +81,7 @@ export default function Certificate() {
             </span>
             {CertificateData[0].aboutCertificate_secondCol}
           </p>
-          <div ref={slidRef} className="keen-slider set_zindex mt-5">
+          <div ref={slidRef} className={`mt-5 ${isHam?"hidden":"keen-slider"}`}>
             {Object.entries(CertificateData[0].Certificateinfo).map(
               ([key, values]) => {
                 const certificate = values[0];

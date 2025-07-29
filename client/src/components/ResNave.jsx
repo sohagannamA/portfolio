@@ -24,7 +24,6 @@ export default function ResNave() {
   const [scrollHeight, setScrollHeight] = useState(false);
   useEffect(() => {
     document.addEventListener("scroll", function () {
-      dispatch(toggleham(false));
       scrollY > 20 ? setScrollHeight(true) : setScrollHeight(false);
     });
   }, []);
@@ -55,7 +54,7 @@ export default function ResNave() {
         </div>
       </div>
       <div
-        className={` fixed w-full h-[100vh] top-[0%] left-0 py-6 px-3 rounded bg-[#ffffff] dark:bg-[#0b1012] ${
+        className={` fixed w-full h-[100vh] top-[0%] left-0 p-[5%]  rounded bg-gradient-to-t from-[#ffffff] via-[rgb(203,200,200)] to-[rgb(206,204,204)] dark:from-[#214243] dark:via-[#000000] dark:to-[rgba(0,0,0,0.90)] ${
           !isNavshow ? "opacity-0 hidden" : "opacity-100 block"
         }`}
       >
@@ -63,7 +62,7 @@ export default function ResNave() {
           <div onClick={()=>dispatch(toggleham(!isNavshow))} className="h-[35px] fixed z-50 top-0 m-3 rounded-full right-0 w-[35px] hover:bg-[#161616] cursor-pointer flex items-center justify-center">
             <IoClose className="text-[22px] text-gray-300" />
           </div>
-          <div className="h-42 relative  w-full bg-[linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.90)),url('https://cdn.pixabay.com/photo/2021/12/10/13/30/working-6860520_640.jpg')] bg-cover bg-center"></div>
+          <div className="h-42 relative  w-full dark:bg-[linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.90)),url('https://cdn.pixabay.com/photo/2021/12/10/13/30/working-6860520_640.jpg')] bg-[linear-gradient(rgba(0,0,0,0.20),rgb(207,202,202))),url('https://cdn.pixabay.com/photo/2021/12/10/13/30/working-6860520_640.jpg')] bg-cover bg-center"></div>
           <div className="h-[100px] absolute_position w-[100px] rounded-full bg-gray-300 dark:bg-[rgb(16,23,26)]">
             <img
               className="h-[100%] object-top p-1 w-[100%] rounded-full"
@@ -77,7 +76,7 @@ export default function ResNave() {
             <div className="dark:text-gray-300 text-gray-950">
               MAMUNUR RASHID SOHAG
             </div>
-            <p className="text-gray-800 dark:text-gray-400 ressmallText">
+            <p className="text-gray-800 mt-2 dark:text-gray-400 ressmallText">
               Computer Science Student
             </p>
 
